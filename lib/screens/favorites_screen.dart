@@ -6,6 +6,12 @@ class FavoritesScreen extends StatefulWidget {
 }
 
 class _FavoritesScreenState extends State<FavoritesScreen> {
+  var _glutenFree = false;
+  var _vegeterian = false;
+  var _vegan = false;
+  var _lactoseFree = false;
+  
+  var 
   @override
   Widget build(BuildContext context) {
     return Center(
