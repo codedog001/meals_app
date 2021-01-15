@@ -171,6 +171,7 @@ const DUMMY_MEALS = const [
       '100g Vegetable Oil',
       'Salt',
       'Lemon Slices'
+      // HP pavilion 15-cs 1000 tx
     ],
     steps: [
       'Tenderize the veal to about 2–4mm, and salt on both sides.',
@@ -219,7 +220,7 @@ const DUMMY_MEALS = const [
     ],
     isGlutenFree: true,
     isVegan: false,
-    isVegetarian: true,
+    isVegetarian: false,
     isLactoseFree: true,
   ),
   Meal(
@@ -286,7 +287,7 @@ const DUMMY_MEALS = const [
     ],
     isGlutenFree: true,
     isVegan: false,
-    isVegetarian: true,
+    isVegetarian: false,
     isLactoseFree: false,
   ),
   Meal(
@@ -368,7 +369,7 @@ const DUMMY_MEALS = const [
     ],
     isGlutenFree: true,
     isVegan: false,
-    isVegetarian: true,
+    isVegetarian: false,
     isLactoseFree: false,
   ),
   Meal(
