@@ -15,6 +15,16 @@ class _FiltersScreenState extends State<FiltersScreen> {
   var _vegan = false;
   var _lactoseFree = false;
 
+  Widget _buildSwitchListTile(
+      {bool avalue, String text, String subtitleText, Function updateValue}) {
+    return SwitchListTile(
+      title: Text(text),
+      value: avalue,
+      subtitle: Text(subtitleText),
+      onChanged: updateValue,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,8 +32,62 @@ class _FiltersScreenState extends State<FiltersScreen> {
         title: Text('Filters'),
       ),
       drawer: MainDrawer(),
-      body: Center(
-        child: Text('Your Filters'),
+      body: Column(
+        children: [
+          Container(
+            padding: EdgeInsets.all(20),
+            child: Text(
+              'Adjust your meal selection',
+              style: Theme.of(context).textTheme.headline6,
+            ),
+          ),
+          Expanded(
+            child: ListView(
+              children: [
+                _buildSwitchListTile(
+                  avalue: _glutenFree,
+                  subtitleText: 'Only show Glutene-free meals',
+                  text: 'Glutene-free Only',
+                  updateValue: (newValue) {
+                    setState(() {
+                      _glutenFree = newValue;
+                    });
+                  },
+                ),
+                _buildSwitchListTile(
+                  avalue: _vegan,
+                  subtitleText: 'Only show vegan Meals',
+                  text: 'Vegan only',
+                  updateValue: (newValue) {
+                    setState(() {
+                      _vegan = newValue;
+                    });
+                  },
+                ),
+                _buildSwitchListTile(
+                  avalue: _vegeterian,
+                  subtitleText: 'Only show vegeterian Meals',
+                  text: 'Vegeterian only',
+                  updateValue: (newValue) {
+                    setState(() {
+                      _vegeterian = newValue;
+                    });
+                  },
+                ),
+                _buildSwitchListTile(
+                  avalue: _lactoseFree,
+                  subtitleText: 'Only show Lactose-free Meals',
+                  text: 'Lactose-free only',
+                  updateValue: (newValue) {
+                    setState(() {
+                      _lactoseFree = newValue;
+                    });
+                  },
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
